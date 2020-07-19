@@ -14,10 +14,24 @@ body,
   font-family: "Montserrat", sans-serif;
   text-align: center;
   display: flex;
+  justify-content: center;
 
   svg {
     height: 100%;
   }
+}
+h1 {
+  color: green;
+  text-align: center;
+  // border: 2px solid black;
+  height: 3vh;
+  width: 100%;
+}
+
+.login {
+  margin-top: 5%;
+  // border: 2px solid black;
+  height: 20vh;
 }
 
 .spacer {
