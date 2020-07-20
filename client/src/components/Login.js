@@ -1,6 +1,7 @@
 import React from 'react';
 import { axiosWithAuth } from '../utils/axiosWithAuth';
 
+
 class Login extends React.Component {
     state = {
         credentials: {
@@ -21,11 +22,11 @@ class Login extends React.Component {
     login = e => {
         e.preventDefault();
         axiosWithAuth()
-            .post('api/login',
+            .post('/api/login',
             this.state.credentials)
             .then(res => {
                 window.localStorage.setItem('token', res.data.payload);
-                this.props.history.push('/protected')
+                this.props.history.push('/protected/BubblePage')
             })
             .catch(err => console.log(err));
     };
@@ -33,6 +34,7 @@ class Login extends React.Component {
     render() {
         return (
             <div>
+              <h1>Log into your Bubble Page!</h1>
                 <form onSubmit={this.login}>
                     <input 
                         type="text"
@@ -48,7 +50,7 @@ class Login extends React.Component {
                         onChange={this.handleChange}
                         placeholder="password"
                     />
-                    <button>Log in</button>
+                    <button>Login</button>
                 </form>
             </div>
         )
